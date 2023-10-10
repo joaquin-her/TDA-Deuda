@@ -21,7 +21,7 @@ Deuda::~Deuda() {
 	delete this->pagos;
 }
 void Deuda::validarIngreso(double monto){
-	if (monto < 0){
+	if (monto < 0.0){
 		throw "El monto inresado no es valido: es negativo";
 	}
 }
@@ -34,7 +34,7 @@ void Deuda::pagar(double pago){
 	validarIngreso(pago);
 	if (pago<=this->importe){
 		this->importe -= pago;
-		this->pagos->setDato(this->cuota,new Pago(pago));
+		this->pagos->setDato(this->cuota +1,new Pago(pago));
 		this->cuota += 1;
 	}else{
 		throw "El pago ingresado es mayor que el importe de la deuda";
@@ -49,7 +49,7 @@ double Deuda::calcularPagosPromedio(){
 	if (cuota>0){
 		double pagos = 0;
 		for (int i = 0; i< cuota; i++){
-			pagos += this->pagos->getDato(i)->getMonto();
+			pagos += this->pagos->getDato(i+1)->getMonto();
 		}
 		return pagos/cuota;
 	}else{
