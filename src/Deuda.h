@@ -12,7 +12,7 @@
 class Deuda {
 private:
 	double importe;
-	Vector<Pago*> pagos;
+	Vector<Pago*> *pagos;
 	int cuota;
 	/*
 	 * pre:
