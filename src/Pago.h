@@ -26,7 +26,7 @@ public:
 	 * pre:
 	 * pos: devuelve el monto del Pago
 	 */
-	double getPago();
+	double getMonto();
 };
 
 #endif /* PAGO_H_ */

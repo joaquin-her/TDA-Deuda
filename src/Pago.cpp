@@ -14,7 +14,7 @@ Pago::Pago(double pago) {
 Pago::~Pago() {
 }
 
-double Pago::getPago(){
+double Pago::getMonto(){
 	return this->monto;
 }
 
